@@ -1,0 +1,44 @@
+body {
+    background-color: cadetblue;
+}
+div {
+    box-sizing: border-box;
+    float:left;
+}
+.judul {
+    margin-top: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:xx-large;
+}
+header {
+    float: left;
+    width: 100%;
+}
+nav {
+    float: left;
+    width: 15%;
+    margin-top: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+section {
+    float: left;
+    width: 60%;
+    margin-top: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+aside {
+    float: left;
+    width: 25%;
+    margin-top: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+footer {
+    float: left;
+    width: 100%;
+    margin-top: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: small;
+}
