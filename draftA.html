@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan JQuery</title>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#foto').hide();
+            $('#btnSembunyi').hide();
+            $("#btnFadeOut").hide();
+
+            $('#btnTampil').click(function() {
+                $('#foto').show();
+                $('#btnTampil').hide();
+                $('#btnFadeIn').hide();
+                $('#btnSembunyi').show();
+                $("#btnFadeOut").show();
+            });
+
+            $('#btnSembunyi').click(()=>{
+                $('#foto').hide();
+                $('#btnTampil').show();
+                $('#btnFadeIn').show();
+                $('#btnSembunyi').hide();
+                $("#btnFadeOut").hide();
+            });
+
+            $('#btnFadeIn').click(function() {
+                $('#foto').fadeIn();
+                $('#btnTampil').hide();
+                $('#btnFadeIn').hide();
+                $('#btnSembunyi').show();
+                $("#btnFadeOut").show();
+            });
+
+            $('#btnFadeOut').click(()=>{
+                $('#foto').fadeOut();
+                $('#btnTampil').show();
+                $('#btnFadeIn').show();
+                $('#btnSembunyi').hide();
+                $("#btnFadeOut").hide();
+            });
+
+        });
+        
+    </script>
+
+</head>
+<body>
+    <div id="container">
+        <img id="foto" src="./img/Pas Foto 3x4.png" alt="">
+    </div>
+    <button id="btnTampil">TAMPIL</button> 
+    <button id="btnSembunyi">SEMBUNYI</button><br/><br/>
+
+    <button id="btnFadeIn">FADE IN</button>
+    <button id="btnFadeOut">FADE OUT</button>
+
+    
+</body>
+</html>

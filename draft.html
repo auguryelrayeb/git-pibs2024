@@ -3,10 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRAFT</title>
+    <title>Latihan JQuery Dasar</title>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#foto').hide();
+            $("#btnSembunyi").hide();
+            $("#btnFadeOut").hide()
+
+            $("#btnTampil").click(function(){
+                $("#foto").show();
+                $("#btnTampil").hide();
+                $("#btnFadeIn").hide()
+                $("#btnSembunyi").show();
+                $("#btnFadeOut").show()
+            });
+
+            $("#btnSembunyi").click(()=>{
+                $("#foto").hide();
+                $("#btnTampil").show();
+                $("#btnFadeIn").show()
+                $("#btnSembunyi").hide();
+                $("#btnFadeOut").hide()
+            });
+
+            $("#btnFadeIn").click(function(){
+                $("#foto").fadeIn(2000);
+                $("#btnTampil").hide();
+                $("#btnFadeIn").hide()
+                $("#btnSembunyi").show();
+                $("#btnFadeOut").show()
+            });
+
+            $("#btnFadeOut").click(()=>{
+                $("#foto").fadeOut();
+                $("#btnTampil").show();
+                $("#btnFadeIn").show()
+                $("#btnSembunyi").hide();
+                $("#btnFadeOut").hide()
+            });
+
+        })
+        
+    </script>
 </head>
 <body>
-    <h1>CLIENT SIDE SCRIPT</h1>
-    <p>Script ini di proses di client</p>
+    <div id="container">
+        <img src="./img/Pas Foto 3x4.png" alt="my foto" id="foto">
+    </div>
+
+    <button id="btnTampil">TAMPIL</button> 
+    <button id="btnSembunyi">SEMBUNYI</button><br/><br/>
+
+    <button id="btnFadeIn">FADE IN</button> 
+    <button id="btnFadeOut">FADE OUT</button><br/><br/>
+
+    
 </body>
 </html>

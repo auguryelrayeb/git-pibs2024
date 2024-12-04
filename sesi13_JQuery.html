@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan JQuery</title>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#foto').hide(function(){
+                    alert("Foto di hide");
+                });
+            
+            $("#tampil").click(()=>{
+                $('#foto').show();
+            });
+            $("#sembunyi").click(()=>{
+                $('#foto').hide();
+            });
+
+            $("#fadein").click(()=>{
+                $('#foto').fadeIn(1000);
+            });
+            $("#fadeout").click(()=>{
+                $('#foto').fadeOut("slow");
+            });
+            $("#fadetoggle").click(()=>{
+                $('#foto').fadeToggle("slow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="foto">
+        <img src="./img/Pas Foto 3x4.png" alt="picture of me">
+    </div>
+    <button id="tampil">Tampilkan</button> 
+    <button id="sembunyi">Sembunyikan</button><br/><br/>
+
+    <button id="fadein">Fade In</button> 
+    <button id="fadeout">Fade Out</button>
+    <button id="fadetoggle">Fade Toggle</button><br/><br/>
+</body>
+</html>

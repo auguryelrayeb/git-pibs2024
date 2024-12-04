@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validasi FORM dengan PHP</title>
+    <title>Validasi FORM dengan PHP 3</title>
     <style>
         .error {
             color: red;
@@ -22,33 +22,50 @@
                 $namaErr = "Nama harus diisi";
             }
             else {
-                $nama = $_POST["nama"];
+                $nama = tes_masukan($_POST["nama"]);
+                //periksa apakah hanya berisi huruf dan spasi
+                if (!preg_match("/^[a-zA-Z-' ]*$/",$nama)) {
+                    $namaErr = "Harap hanya menggunakan huruf dan spasi saja";
+                }
             }
 
             if(empty($_POST["email"])) {
                 $emailErr = "Email harus diisi";
             }
             else {
-                $email = $_POST["email"];
+                $email = tes_masukan($_POST["email"]);
+                // check if e-mail address is well-formed
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $emailErr = "Format email tidak valid";
+                }
             }
 
             if(empty($_POST["komentar"])) {
                 $komentarErr = "Email harus diisi";
             }
             else {
-                $komentar = $_POST["komentar"];
+                $komentar = tes_masukan($_POST["komentar"]);
             }
             
             if(empty($_POST["jk"])) {
                 $jkErr = "Email harus diisi";
             }
             else {
-                $jk = $_POST["jk"];
+                $jk = tes_masukan($_POST["jk"]);
+                
             }
         }
+
+        function tes_masukan($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+ 
     ?>
     
-    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         Nama: <input type="text" name="nama" value="<?php echo $nama; ?>"><span class="error"> * <?php echo $namaErr; ?></span>
         <br/><br/>
         Email: <input type="text" name="email" value="<?php echo $email; ?>"><span class="error"> * <?php echo $emailErr; ?></span>
